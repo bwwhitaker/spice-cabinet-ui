@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import AuthButton from './AuthButton';
@@ -17,6 +17,7 @@ const NavbarUI = () => {
       variant="dark"
     >
       <Navbar.Brand href="/">Spice Cabinet</Navbar.Brand>
+
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse className="justify-content-end">
         <Nav className="justify-content-end">

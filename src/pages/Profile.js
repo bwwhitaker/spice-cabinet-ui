@@ -15,6 +15,10 @@ const Profile = () => {
       <Container>
         <h2>{user.name}</h2>
         <p>{user.email}</p>
+        <p></p>
+        <p>
+          <a href="/admin"> Admin</a>
+        </p>
       </Container>
     )
   );

@@ -3,7 +3,6 @@ import Container from 'react-bootstrap/Container';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import Jumbotron from 'react-bootstrap/Jumbotron';
-import Button from 'react-bootstrap/Button';
 import LoginButton from '../components/LoginButton';
 
 export default (class LoggedOutHome extends Component {

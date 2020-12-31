@@ -21,19 +21,21 @@ export default (class LoggedInHome extends Component {
   };
 
   render() {
-    const { recipes } = this.state;
-    console.log(this.state.recipes);
-
-    function NewlineText(props) {
-      const text = props.text;
-      return text.split('\n').map((str) => <p>{str}</p>);
-    }
 
     return (
       <Container>
         <Row>
           <Jumbotron>
             <h1>Welcome In!</h1>
+            <p>Welcome in to your cabinet.</p>
+            <p>
+              Feel free to browse the site and{' '}
+              <a href="\allrecipes">review our recipes.</a>
+            </p>
+            <p>
+              Or you can start to <a href="\allrecipes">fill your cabinet</a> so
+              you can receive custom recipes.
+            </p>
           </Jumbotron>
         </Row>
       </Container>
