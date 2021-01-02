@@ -5512,6 +5512,11 @@ globby@^6.1.0:
     pify "^2.0.0"
     pinkie-promise "^2.0.0"
 
+goober@^2.0.18:
+  version "2.0.18"
+  resolved "https://registry.yarnpkg.com/goober/-/goober-2.0.18.tgz#5a7c1dbac104a4bccb1547f0218ef80d0171ad10"
+  integrity sha512-XaYq9GqRkWHS0DFPQZQLhrKGWWbiz+ydiEbMRN8eGJZ7enDjmWnRv3RWn5RwdukjnHUA6b/AQcf4QWjellKOCw==
+
 graceful-fs@^4.1.11, graceful-fs@^4.1.15, graceful-fs@^4.1.2, graceful-fs@^4.1.6, graceful-fs@^4.2.0, graceful-fs@^4.2.4:
   version "4.2.4"
   resolved "https://registry.yarnpkg.com/graceful-fs/-/graceful-fs-4.2.4.tgz#2256bde14d3632958c465ebc96dc467ca07a29fb"
@@ -5653,6 +5658,11 @@ hmac-drbg@^1.0.0:
     hash.js "^1.0.3"
     minimalistic-assert "^1.0.0"
     minimalistic-crypto-utils "^1.0.1"
+
+hoist-non-react-statics@^2.3.1:
+  version "2.5.5"
+  resolved "https://registry.yarnpkg.com/hoist-non-react-statics/-/hoist-non-react-statics-2.5.5.tgz#c5903cf409c0dfd908f388e619d86b9c1174cb47"
+  integrity sha512-rqcy4pJo55FTTLWt+bU8ukscqHeE/e9KWvsOW2b/a3afxQZhwkQdT1rPPCJ0rYXdj4vNcasY8zHTH+jF/qStxw==
 
 hoist-non-react-statics@^3.0.0, hoist-non-react-statics@^3.1.0:
   version "3.3.2"
@@ -9300,6 +9310,13 @@ react-lifecycles-compat@^3.0.4:
   resolved "https://registry.yarnpkg.com/react-lifecycles-compat/-/react-lifecycles-compat-3.0.4.tgz#4f1a273afdfc8f3488a8c516bfda78f872352362"
   integrity sha512-fBASbA6LnOU9dOU2eW7aQ8xmYBSXUIWr+UmF9b1efZBazGNO+rcXT/icdKnYm2pTwcRylVUYwW7H1PHfLekVzA==
 
+react-multi-select-component@^3.0.8:
+  version "3.0.8"
+  resolved "https://registry.yarnpkg.com/react-multi-select-component/-/react-multi-select-component-3.0.8.tgz#96afe11bde131cbfa2d38c456b768064523dcc72"
+  integrity sha512-FIgKE4doUqzbK80tuXxNpSfy88yPSdm5RISWqrfDIKqV2Yov62obuAFlc2+K15qJ9qH8bJCz1iQIOzsJZDNUQg==
+  dependencies:
+    goober "^2.0.18"
+
 react-overlays@^4.1.0:
   version "4.1.1"
   resolved "https://registry.yarnpkg.com/react-overlays/-/react-overlays-4.1.1.tgz#0060107cbe1c5171a744ccda3fbf0556d064bc5f"
@@ -9420,6 +9437,14 @@ react-select-search@^2.2.4:
   integrity sha512-VHNnU8YhBo4mCiFxONh1WQKh1UD7JVXrxDPWRqqHwxRfJAU6epk2+1DmDytV2DlJ3W3CUVEzOY53hRFQtbt6XQ==
   optionalDependencies:
     fuse.js "^3.4.5"
+
+react-timeout@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/react-timeout/-/react-timeout-2.0.0.tgz#22c6399969787bfe007b80654401e8e062b0c220"
+  integrity sha512-vh0PRUOhpe9KFXzxpibRsrEdPrQf+jd105wqKcm15ObxE4UbqLQwnS3WIR8tmG8adTJEHvVw7zs9wuC98hsR7Q==
+  dependencies:
+    hoist-non-react-statics "^2.3.1"
+    object-assign "^4.0.1"
 
 react-transition-group@^4.4.1:
   version "4.4.1"

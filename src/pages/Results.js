@@ -4,10 +4,10 @@ import Row from 'react-bootstrap/Row';
 import Jumbotron from 'react-bootstrap/Jumbotron';
 import SpiceSearch from '../components/SpiceSearch';
 
-export default (class AllRecipes extends Component {
+export default (class Results extends Component {
   constructor(props) {
     super(props);
-    this.state = { recipes: [] };
+    this.state = { recipes: [], search_options: [] };
   }
 
   componentDidMount() {
@@ -32,7 +32,7 @@ export default (class AllRecipes extends Component {
         <Container>
           <Row>
             <Jumbotron>
-              <h1>All Recipes:</h1>
+              <h1>Filtered Recipes:</h1>
 
               {recipes.map((row) => (
                 <div>

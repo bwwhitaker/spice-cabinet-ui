@@ -5,6 +5,7 @@ import Home from './pages/Home';
 import Admin from './pages/Admin';
 import NavbarUI from './components/NavbarUI';
 import AllRecipes from './pages/AllRecipes';
+import Results from './pages/Results';
 
 import Profile from './pages/Profile';
 
@@ -14,6 +15,7 @@ function App(props) {
       <NavbarUI />
       <Route exact path="/" component={Home} />
       <ProtectedRoute exact path="/allrecipes" component={AllRecipes} />
+      <ProtectedRoute exact path="/results" component={Results} />
       <ProtectedRoute exact path="/profile" component={Profile} />
       <ProtectedRoute path="/admin" component={Admin} />
     </Router>

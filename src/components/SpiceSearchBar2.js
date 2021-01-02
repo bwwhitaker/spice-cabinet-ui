@@ -2,11 +2,11 @@ import React, { Component } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Col from 'react-bootstrap/Col';
-import { Multiselect } from 'multiselect-react-dropdown';
+import MultiSelect from 'react-multi-select-component';
 import { InputGroup } from 'react-bootstrap';
 import './Searchbar.css';
 
-export default (class SpiceSearchBar extends Component {
+export default (class SpiceSearchBar2 extends Component {
   constructor(props) {
     super(props);
     this.onSelect = this.onSelect.bind(this);
@@ -15,10 +15,12 @@ export default (class SpiceSearchBar extends Component {
       spice_search: [
         {
           id: '1',
-          name: 'Abelmosk',
+          label: 'Abelmosk',
+          value: 'Abelmosk',
         },
         {
           id: '2',
+          label: 'Absinthe',
           name: 'Absinthe',
         },
         {
@@ -1095,6 +1097,8 @@ export default (class SpiceSearchBar extends Component {
         },
       ],
       selectedValues: [],
+      selected: [],
+      setSelected: [],
     };
   }
 
@@ -1117,28 +1121,12 @@ export default (class SpiceSearchBar extends Component {
         <Form>
           <InputGroup className="SearchField">
             <InputGroup.Prepend>
-              <Multiselect
-                placeholder="Search by Spices"
+              <pre></pre>
+              <MultiSelect
                 options={this.state.spice_search}
-                displayValue="name"
-                avoidHighlightFirstOption={true}
-                closeOnSelect={false}
-                hidePlaceholder={true}
-                ref={this.multiselectRef}
-                onSelect={this.onSelect}
-                onRemove={this.onRemove}
-                onSearch={this.handleClick}
-                showCheckbox={true}
-                onKeyPress={(event) => {
-                  if (event.key === 'return') {
-                    this.onSelect();
-                  }
-                }}
-                style={{
-                  searchBox: {
-                    width: '90vw',
-                  },
-                }}
+                value={this.state.selected}
+                onChange={this.state.setSelected}
+                labelledBy={'Select'}
               />
             </InputGroup.Prepend>
             <InputGroup.Append>
