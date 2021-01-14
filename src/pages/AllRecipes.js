@@ -7,18 +7,27 @@ import SpiceSearch from '../components/SpiceSearch';
 export default (class AllRecipes extends Component {
   constructor(props) {
     super(props);
-    this.state = { recipes: [] };
+    this.state = { recipes: [], searchoptions: [] };
   }
 
   componentDidMount() {
     this.getRecipes();
+    this.getSearchOptions();
   }
 
   getRecipes = (_) => {
-    fetch('http://localhost:4001/recipes')
+    fetch('http://localhost:4002/allrecipes')
       .then((response) => response.json())
       .then((response) => this.setState({ recipes: response.data }))
       .catch((err) => console.error(err));
+  };
+
+  getSearchOptions = (_) => {
+    const searchOptions = localStorage.getItem('searchOptions');
+    console.log(searchOptions);
+    const jsonify = searchOptions.split(',');
+    const json_searchOptions = JSON.stringify(jsonify);
+    this.setState({ searchoptions: json_searchOptions });
   };
 
   render() {

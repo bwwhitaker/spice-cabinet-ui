@@ -7,15 +7,32 @@ import SpiceSearch from '../components/SpiceSearch';
 export default (class Results extends Component {
   constructor(props) {
     super(props);
-    this.state = { recipes: [], search_options: [] };
+    this.state = { recipes: [], searchoptions: '' };
   }
 
   componentDidMount() {
-    this.getRecipes();
+    this.handleSearch();
   }
 
+  handleSearch() {
+    setTimeout(this.getSearchOptions, 50);
+    setTimeout(this.getRecipes, 50);
+  }
+
+  getSearchOptions = (_) => {
+    const searchOptions = localStorage.getItem('searchOptions');
+    console.log(searchOptions);
+    const jsonify = searchOptions.replace(/,/g, "' OR '");
+    console.log(jsonify);
+    const json_searchOptions = `${jsonify}`;
+    console.log(json_searchOptions);
+    this.setState({ searchoptions: json_searchOptions });
+  };
+
   getRecipes = (_) => {
-    fetch('http://localhost:4001/recipes')
+    const searchoptions = this.state.searchoptions;
+    console.log(searchoptions);
+    fetch(`http://localhost:4002/recipes/search?search=${searchoptions}`)
       .then((response) => response.json())
       .then((response) => this.setState({ recipes: response.data }))
       .catch((err) => console.error(err));
@@ -24,6 +41,7 @@ export default (class Results extends Component {
   render() {
     const { recipes } = this.state;
     console.log(this.state.recipes);
+    console.log(this.state.searchoptions);
 
     return (
       <div>
@@ -36,12 +54,12 @@ export default (class Results extends Component {
 
               {recipes.map((row) => (
                 <div>
-                  <h3>{row.recipe_name}</h3>
+                  <h3 key={row.recipe_id}>{row.recipe_name}</h3>
                   <p>Inredients:</p>
                   <ul>
                     {JSON.parse(row.recipe_ingredients_json).ingredients.map(
                       (ing) => (
-                        <li key={ing.recipe_id}>
+                        <li key={ing.id}>
                           {ing.amount} {ing.unit} {ing.ingredient_name}
                         </li>
                       ),

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import MultiSelect from 'react-multi-select-component';
 import Button from 'react-bootstrap/Button';
 import Row from 'react-bootstrap/Row';
@@ -1387,17 +1387,18 @@ function SpiceSearch(props) {
           />
         </Col>
         <Col xs={1}>
-          <Link to="/">
+          <Link to="/Results">
             <Button
               onClick={() => {
-                const imthelist = JSON.stringify(selected);
-                console.log(imthelist);
-                JSON.parse(imthelist).forEach((element, index, array) => {
+                const search_list = JSON.stringify(selected);
+                console.log(search_list);
+                JSON.parse(search_list).forEach((element, index, array) => {
                   var elemental = element.value;
                   console.log(elemental);
                   setSelectedNames(selectedNames.push(elemental));
                 });
                 console.log(selectedNames);
+                localStorage.setItem('searchOptions', selectedNames);
               }}
             >
               Go
