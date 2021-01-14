@@ -16,8 +16,8 @@ function SpiceSearch(props) {
     },
     {
       ID: 'B',
-      label: 'Ice',
-      value: 'Ice',
+      label: 'Ice Cubes',
+      value: 'Ice Cubes',
     },
     {
       ID: '1',
