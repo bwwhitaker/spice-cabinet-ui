@@ -1,13 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import MultiSelect from 'react-multi-select-component';
 import Button from 'react-bootstrap/Button';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
-import ReactTimeout from 'react-timeout';
-import { Link } from 'react-router-dom';
 
-function SpiceSearch(props) {
+
+export default function SpiceSearch({onChildChange}) {
   const spice_search_options = [
     {
       ID: 'A',
@@ -1372,7 +1371,6 @@ function SpiceSearch(props) {
   ];
 
   const [selected, setSelected] = useState([]);
-  const [selectedNames, setSelectedNames] = useState([]);
 
   return (
     <Container>
@@ -1386,28 +1384,22 @@ function SpiceSearch(props) {
             hasSelectAll={false}
           />
         </Col>
-        <Col xs={1}>
-          <Link to="/Results">
+        <Col xs={1}>          
             <Button
               onClick={() => {
                 const search_list = JSON.stringify(selected);
+                sessionStorage.setItem('searchArray', search_list);
                 console.log(search_list);
-                JSON.parse(search_list).forEach((element, index, array) => {
-                  var elemental = element.value;
-                  console.log(elemental);
-                  setSelectedNames(selectedNames.push(elemental));
-                });
-                console.log(selectedNames);
-                localStorage.setItem('searchOptions', selectedNames);
+                const selectedItems = JSON.stringify(selected)
+                sessionStorage.setItem('selectedItems', selectedItems)
+                onChildChange()
               }}
             >
-              Go
+              Search
             </Button>
-          </Link>
+
         </Col>
       </Row>
     </Container>
   );
-}
-
-export default ReactTimeout(SpiceSearch);
+};

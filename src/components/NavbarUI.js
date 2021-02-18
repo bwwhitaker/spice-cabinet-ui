@@ -22,7 +22,7 @@ const NavbarUI = () => {
       <Navbar.Collapse className="justify-content-end">
         <Nav className="justify-content-end">
           <Nav.Link href="/">Home</Nav.Link>
-          <Nav.Link href="/AllRecipes">All Recipes</Nav.Link>
+          <Nav.Link href="/Recipes">Recipes</Nav.Link>
           <Nav.Link href="/Profile">Profile</Nav.Link>
           <AuthButton />
         </Nav>

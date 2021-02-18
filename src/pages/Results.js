@@ -32,7 +32,7 @@ export default (class Results extends Component {
   getRecipes = (_) => {
     const searchoptions = this.state.searchoptions;
     console.log(searchoptions);
-    fetch(`http://localhost:4002/recipes/search?search=${searchoptions}`)
+    fetch(`http://localhost:4002/search?search=${searchoptions}`)
       .then((response) => response.json())
       .then((response) => this.setState({ recipes: response.data }))
       .catch((err) => console.error(err));

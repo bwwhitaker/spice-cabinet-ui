@@ -13,15 +13,12 @@ const Home = () => {
 
   return isAuthenticated ? (
     <div>
-      <p>
+      
         <LoggedInHome />
-      </p>
     </div>
   ) : (
     <div>
-      <p>
         <LoggedOutHome />
-      </p>
     </div>
   );
 };

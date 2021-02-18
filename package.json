@@ -2,6 +2,7 @@
   "name": "spice-cabinet-ui",
   "version": "0.1.0",
   "private": true,
+  "proxy": "http://localhost:4002",
   "dependencies": {
     "@auth0/auth0-react": "^1.2.0",
     "@testing-library/jest-dom": "^5.11.4",
@@ -9,9 +10,11 @@
     "@testing-library/user-event": "^12.1.10",
     "axios": "^0.21.0",
     "bootstrap": "^4.5.3",
+    "concurrently": "^5.3.0",
     "dotenv": "^8.2.0",
     "json-loader": "^0.5.7",
     "multiselect-react-dropdown": "^1.6.3",
+    "randomstring": "^1.1.5",
     "react": "^17.0.1",
     "react-bootstrap": "^1.4.0",
     "react-dom": "^17.0.1",
@@ -25,9 +28,12 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "server": "cd .. && cd api && npm start",
+    "client": "yarn start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "dev": "concurrently \"npm run client\" \"npm run server\""
   },
   "eslintConfig": {
     "extends": [
