@@ -13,6 +13,7 @@ function App(props) {
   return (
     <Router>
       <NavbarUI />
+      
       <Route exact path="/" component={Home} />
       <ProtectedRoute exact path="/recipes" component={Recipes} />
       <ProtectedRoute exact path="/results" component={Results} />

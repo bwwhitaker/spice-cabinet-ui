@@ -3,6 +3,9 @@ import { useAuth0 } from '@auth0/auth0-react';
 import Loading from '../components/Loading';
 import LoggedOutHome from './LoggedOutHome';
 import LoggedInHome from './LoggedInHome';
+import GetUserEmail from '../components/GetUserEmail';
+import GetUserSearchID from '../components/GetUserSearchID';
+import ClearSessionStorage from '../components/ClearSessionStorage';
 
 const Home = () => {
   const { isAuthenticated, isLoading } = useAuth0();
@@ -13,12 +16,14 @@ const Home = () => {
 
   return isAuthenticated ? (
     <div>
-      
         <LoggedInHome />
+        <GetUserEmail />
+        <GetUserSearchID />
     </div>
   ) : (
     <div>
         <LoggedOutHome />
+        <ClearSessionStorage />
     </div>
   );
 };

@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Jumbotron from 'react-bootstrap/Jumbotron';
-import GetUser from '../components/GetUser'
 
 export default (class LoggedInHome extends Component {
   constructor(props) {
@@ -12,14 +11,8 @@ export default (class LoggedInHome extends Component {
 
   componentDidMount() {
     this.getRecipes();
-    this.getUserHash();
   }
-
-  getUserHash = (_) => {
-    
-   
-    console.log('HI!')
-  }
+  
 
   getRecipes = (_) => {
     fetch('http://localhost:4002/recipes')
@@ -32,7 +25,6 @@ export default (class LoggedInHome extends Component {
     
     return (
       <div>
-      <GetUser/>
       <Container>
         <Row>
           <Jumbotron>
