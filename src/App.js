@@ -6,6 +6,8 @@ import Admin from './pages/Admin';
 import NavbarUI from './components/NavbarUI';
 import Recipes from './pages/Recipes';
 import Results from './pages/Results';
+import Cabinet from './pages/Cabinet';
+
 
 import Profile from './pages/Profile';
 
@@ -19,6 +21,7 @@ function App(props) {
       <ProtectedRoute exact path="/results" component={Results} />
       <ProtectedRoute exact path="/profile" component={Profile} />
       <ProtectedRoute path="/admin" component={Admin} />
+      <ProtectedRoute path="/cabinet" component={Cabinet} />
     </Router>
   );
 }

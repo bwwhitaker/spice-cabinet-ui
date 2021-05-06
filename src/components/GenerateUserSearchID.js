@@ -1,9 +1,5 @@
 const GenerateUserUserID = () => {
+  return null;
+};
 
-    
-
-    return(null)
-    
-  };
-  
-  export default GenerateUserUserID;
+export default GenerateUserUserID;

@@ -6,6 +6,7 @@ import LoggedInHome from './LoggedInHome';
 import GetUserEmail from '../components/GetUserEmail';
 import GetUserSearchID from '../components/GetUserSearchID';
 import ClearSessionStorage from '../components/ClearSessionStorage';
+import RegisterUserModal from '../components/RegisterUserModal';
 
 const Home = () => {
   const { isAuthenticated, isLoading } = useAuth0();
@@ -16,14 +17,15 @@ const Home = () => {
 
   return isAuthenticated ? (
     <div>
-        <LoggedInHome />
-        <GetUserEmail />
-        <GetUserSearchID />
+      <LoggedInHome />
+      <GetUserEmail />
+      <GetUserSearchID />
+      <RegisterUserModal />
     </div>
   ) : (
     <div>
-        <LoggedOutHome />
-        <ClearSessionStorage />
+      <LoggedOutHome />
+      <ClearSessionStorage />
     </div>
   );
 };

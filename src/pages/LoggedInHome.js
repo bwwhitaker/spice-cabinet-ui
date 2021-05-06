@@ -12,7 +12,6 @@ export default (class LoggedInHome extends Component {
   componentDidMount() {
     this.getRecipes();
   }
-  
 
   getRecipes = (_) => {
     fetch('http://localhost:4002/recipes')
@@ -22,25 +21,24 @@ export default (class LoggedInHome extends Component {
   };
 
   render() {
-    
     return (
       <div>
-      <Container>
-        <Row>
-          <Jumbotron>
-            <h1>Welcome In!</h1>
+        <Container>
+          <Row>
+            <Jumbotron>
+              <h1>Welcome In!</h1>
               <p>Welcome in to your cabinet.</p>
               <p>
-              Feel free to browse the site and{' '}
-              <a href="\recipes">review our recipes.</a>
+                Feel free to browse the site and{' '}
+                <a href="\recipes">review our recipes.</a>
               </p>
               <p>
-              Or you can start to <a href="\recipes">fill your cabinet</a> so
-              you can receive custom recipes.
-             </p>
-          </Jumbotron>
-        </Row>
-      </Container>
+                Or you can start to <a href="\recipes">fill your cabinet</a> so
+                you can receive custom recipes.
+              </p>
+            </Jumbotron>
+          </Row>
+        </Container>
       </div>
     );
   }

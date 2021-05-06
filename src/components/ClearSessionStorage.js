@@ -1,8 +1,7 @@
 function ClearSessionStorage() {
-        sessionStorage.clear()
+  sessionStorage.clear();
 
-
-    return(null)
+  return null;
 }
 
-export default ClearSessionStorage
+export default ClearSessionStorage;
