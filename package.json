@@ -29,7 +29,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "server": "cd .. && cd api && npm start",
+    "server": "cd .. && cd spice-api && npm start",
     "client": "yarn start",
     "build": "react-scripts build",
     "test": "react-scripts test",
